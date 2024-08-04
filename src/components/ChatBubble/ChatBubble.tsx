@@ -55,22 +55,22 @@ export default function ChatBubble(props: ChatBubbleProps) {
       className={` flex items-center p-2 rounded-lg gap-4 max-w-full w-fit pr-8 from-[#29166F] to-[#6E52D8]  ${
         user === "USER"
           ? "bg-white text-black selection:bg-black selection:text-white"
-          : "bg-gradient-to-br text-white selection:bg-white selection:text-black"
+          : "bg-gradient-to-br text-white selection:bg-white selection:text-black "
       }`}
     >
       {user === "USER" ? (
         <div
-          className="bg-[#F2F2F2] h-9 self-start  aspect-square font-bold flex justify-center items-center p-2 rounded-md"
+          className="bg-[#F2F2F2] h-9 self-start aspect-square font-bold flex justify-center items-center p-2 rounded-md"
           title={USER.name}
         >
           {USER.initials}
         </div>
       ) : (
-        <div className="bg-[#F2F2F2] h-9 self-start  aspect-square font-bold flex justify-center items-center p-2 rounded-md">
+        <div className="bg-[#F2F2F2] h-9 self-start aspect-square font-bold flex justify-center items-center p-2 rounded-md">
           <img className="h-full w-full" src={mvlu_logo} />
         </div>
       )}
-      <div className="font-medium">
+      <div className="font-medium lg:pt-2.5 lg:pb-2.5 md:pt-2 md:pb-2 sm:pt-2 sm:pb-2">
         <Markdown className="chat__bubble">{message}</Markdown>
         {loading && <ChatLoader />}
       </div>
