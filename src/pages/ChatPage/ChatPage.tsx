@@ -3,6 +3,7 @@ import ChatInput from "../../components/ChatInput";
 import useMessage from "../../hooks/useMessage";
 import { useEffect, useRef } from "react";
 import ChatBubble from "../../components/ChatBubble";
+import Feedback from "../../components/Feedback";
 
 export default function ChatPage() {
   // eslint-disable-next-line
@@ -48,6 +49,11 @@ export default function ChatPage() {
             </div>
           );
         })}
+        <div>
+        <div className="container mx-auto max-w-[720px] pt-1 pb-[300px] px-4 lg:px-0 space-y-8">
+          <Feedback />
+        </div>
+        </div>
       </div>
       <div className="fixed left-0 right-0 px-4 md:px-0 mx-auto bottom-6 max-w-[720px] w-full">
         <ChatInput variant="chat" onSubmit={handleSumbit} />
